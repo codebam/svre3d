@@ -12,7 +12,7 @@ let listening = false;
 
 export const MainUI = ({ children }) => {
 
-	const [tab, setTab] = useState('inventory');
+	const [tab, setTab] = useState('map');
 
 	const [inventory, setInventory] = useState([...(PlayerInfo.entity?.inventory || [])]);
 	const [currentItem, setCurrentItem] = React.useState<Item | null>(null)

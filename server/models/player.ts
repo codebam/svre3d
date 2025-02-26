@@ -21,16 +21,21 @@ export const PlayerModel = {
 	},
 	spawnPoint: { x: 0, z: 0 }
 } as {
+	email: string,
 	username: string;
 	position: { x?: number, y?: number, z?: number },
 	variant: string,
-	equipment: { [key: string]: any },
-	inventory: (typeof ItemDBModel)[],
-	settings: { [key: string]: any },
-	exp: {
+	equipment?: { [key: string]: any },
+	inventory?: (typeof ItemDBModel)[],
+	settings?: { [key: string]: any },
+	exp?: {
 		level: number;
 		max: number;
 		current: number;
+	},
+	spawnPoint: {
+		x: number,
+		z: number
 	}
 }
 

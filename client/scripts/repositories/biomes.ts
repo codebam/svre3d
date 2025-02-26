@@ -11,7 +11,8 @@ export class Biomes {
 
 	static applyChunkBiome(chunk: Chunk) {
 		chunk.biome.biome.ground.texture = ResourceMap.find(chunk.biome.manifest.id)!.biome.ground.texture;
-		const materials = 'mapping' in chunk.biome.biome.ground ? chunk.biome.biome.ground.mapping!.map(i => MaterialManager.makeSegmentMaterial((chunk.biome as any).biome.ground.texture.resource.load[i], chunk.biome.biome)) : MaterialManager.makeSegmentMaterial(chunk.biome.biome.ground.texture.resource.load, chunk.biome.biome);
+		const normalMap = chunk.biome.biome.ground.texture.resource.load?.[ResourceMap.find(chunk.biome.manifest.id)!.biome.normalMap];
+		const materials = 'mapping' in chunk.biome.biome.ground ? chunk.biome.biome.ground.mapping!.map(i => MaterialManager.makeSegmentMaterial((chunk.biome as any).biome.ground.texture.resource.load[i], chunk.biome.biome, normalMap)) : MaterialManager.makeSegmentMaterial(chunk.biome.biome.ground.texture.resource.load, chunk.biome.biome, normalMap);
 		(chunk.object3d as any).material = materials;
 	}
 

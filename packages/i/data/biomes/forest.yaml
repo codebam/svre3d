@@ -4,6 +4,7 @@ manifest:
 biome:
   entities: 'Groveborn'
   ground: !import './segments/forest.i.yaml'
+  normalMap: 4
   tile:
     multicolor: true
     # keepdefault: true

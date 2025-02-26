@@ -9,14 +9,13 @@ import { xyz } from "./misc.xyz.js";
 import { StructureData } from "./structure.js";
 
 export class ChunkData extends ServerData {
-	// Chunk-specific properties
-	terrainHeightMap: number[][]; // 2D array representing terrain height
-	structures: StructureData[]; // List of structures in the chunk
-	entities: EntityData[]; // List of entities in the chunk
+	terrainHeightMap: number[][];
+	structures: StructureData[];
+	entities: EntityData[];
 	position: xyz;
 	biome!: ResourceSchema;
 
-	chunkSize: number; // Chunk Size
+	chunkSize: number;
 
 	data: any = {};
 
@@ -24,7 +23,7 @@ export class ChunkData extends ServerData {
 
 	constructor() {
 		super();
-		this.terrainHeightMap = [[]]; // Initialize with an empty 2D array
+		this.terrainHeightMap = [[]];
 		this.structures = [];
 		this.entities = [];
 		this.position = { x: 0, y: 0, z: 0 };

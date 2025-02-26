@@ -4,6 +4,7 @@ manifest:
 biome:
   entities: 'Verdantkin'
   ground: !import './segments/magic.i.yaml'
+  normalMap: 2
   tile:
     multicolor: true
     keepdefault: true

@@ -4,6 +4,7 @@ manifest:
 biome:
   entities: 'Duneborn'
   ground: !import './segments/rock.i.yaml'
+  normalMap: 2
   tile:
     multicolor: true
     keepdefault: true

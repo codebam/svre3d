@@ -5,5 +5,6 @@ resource:
   loader: texture
   sources: [
     !realpath '../../../bin/textures/segment_magic_top.png',
-    !realpath '../../../bin/textures/segment_magic_side.png'
+    !realpath '../../../bin/textures/segment_magic_side.png',
+    !realpath '../../../bin/textures/segment_magic_normal.png',
   ]

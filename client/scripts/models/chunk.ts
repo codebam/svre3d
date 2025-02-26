@@ -5,7 +5,7 @@ import { Model } from "./model.js";
 
 export class Chunk extends ChunkData {
 
-	position!: THREE.Vector3;
+	declare position: THREE.Vector3;
 	size!: number;
 
 

@@ -56,6 +56,15 @@ export class MaterialManager {
 			delete materialOptions.texture;
 		}
 
+		if(materialOptions.normalMap){
+			const texture = ResourceMap.find(parseVariable(materialOptions.normalMap, variables));
+			console.log(texture, materialOptions.normalMap);
+			if(texture) {
+				uniforms.normalMap = { value: texture.texture.clone() };
+				materialOptions.normalMap = texture.texture.clone();
+			}
+		}
+
 		const mat = fragment && vertex ? new THREE.ShaderMaterial({
 			fragmentShader: fragment,
 			vertexShader: vertex,
@@ -72,7 +81,7 @@ export class MaterialManager {
 
 	static parseMaterialOptions(options, variables = {}){
 		const o = {};
-		const keys = ['map', 'color', 'emissive', 'emissiveIntensity', 'metalness', 'opacity', 'color', 'roughness', 'wireframe', 'transparent'];
+		const keys = ['map', 'color', 'emissive', 'emissiveIntensity', 'metalness', 'opacity', 'color', 'roughness', 'wireframe', 'transparent', 'normalMap'];
 		for(let i of keys) if(i in options) o[i] = parseVariable(options[i], variables);
 		return o;
 	}
@@ -84,7 +93,7 @@ export class MaterialManager {
 		) : MaterialManager.parseMaterial(mat, variables);
 	}
 
-	static makeSegmentMaterial(texture: THREE.Texture, biome: any){
+	static makeSegmentMaterial(texture: THREE.Texture, biome: any, normalMap?: THREE.Texture){
 	
 		const { fragment, vertex, materialOptions } = biome?.ground?.shader || { materialOptions: {} };
 		
@@ -102,6 +111,7 @@ export class MaterialManager {
 		const mat = materialOptions ? new THREE.MeshStandardMaterial({
 			...MaterialManager.parseMaterialOptions(materialOptions),
 			map: texture,
+			normalMap,
 			...colorOptions
 		}) : new THREE.ShaderMaterial({
 			fragmentShader: fragment,

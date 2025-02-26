@@ -1,4 +1,5 @@
 import { THREE } from "enable3d";
+import { Settings } from "../settings/settings";
 
 
 export type lights = {
@@ -30,7 +31,7 @@ export class Lights {
 		directionalLight.intensity = Math.floor(intensity / 2);
 		hemisphereLight.color = new THREE.Color(0xffffff);
 
-    var d = 20;
+    var d = Settings.get('performance.renderDistance') * 10;
 		directionalLight.castShadow = true;
     directionalLight.shadow.camera.left = - d;
     directionalLight.shadow.camera.right = d;
@@ -41,7 +42,7 @@ export class Lights {
     directionalLight.shadow.camera.near = 1;
     directionalLight.shadow.camera.far = 10000;
 
-		// directionalLight.shadow.camera.
+		directionalLight.shadow.radius = (d*d) * Math.PI;
 	}
 
 	static updateLightPosition(v: THREE.Vector3){

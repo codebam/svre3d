@@ -1,0 +1,6 @@
+manifest:
+  id: !id leaf_normal
+  type: texture
+resource:
+  src: !realpath ../../../bin/textures/leaf_normal.png
+  loader: texture

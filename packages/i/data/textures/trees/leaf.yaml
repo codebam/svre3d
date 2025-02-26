@@ -3,4 +3,5 @@ manifest:
   type: texture
 resource:
   src: !realpath ../../../bin/textures/leaf.png
+  normalMap: !realpath ../../../bin/textures/leaf_normal.png
   loader: texture
