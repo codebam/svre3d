@@ -8,7 +8,17 @@
     "noImplicitAny": false,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "allowJs": true,
+    "outDir": "dist",
+    "typeRoots": ["./server/types"],
+    "paths": {
+      "three": ["./server/types/three-override.d.ts"]
+    }
   },
   "include": ["server/**/*"],
-  "exclude": ["node_modules", "**/*.spec.ts"]
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts",
+    "dist"
+  ]
 }

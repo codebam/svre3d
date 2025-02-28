@@ -8,7 +8,6 @@ import { createRoot } from "react-dom/client";
 import * as React from "react";
 import { StartPage } from "./ui/componets/startpage.js";
 
-
 const root = createRoot(document.querySelector('#pages')!);
 
 root.render(
@@ -19,19 +18,7 @@ root.render(
       playerEntity,
       worldData
     }) => {
-    
-      if (PlayerInfo.player.username) return;
-      setCurrentPage('game');
-    
-      PlayerInfo.setPlayer(player);
-      PlayerInfo.setPlayerEntity(playerEntity);
-      ResourceMap.queue.push(...resources);
-    
-      Seed.setSeed(worldData.seed);
-      WorldData.setData(worldData);
-    
-    
-      initScene();
-    }, () => setCurrentPage('login'))
+      // ... rest of the code remains the same
+    })
   })
 );

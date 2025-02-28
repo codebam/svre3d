@@ -15,8 +15,7 @@ import { Players } from "./repositories/players.js";
 import Projectiles from "./repositories/projectiles.js";
 import { ResourceMap } from "./repositories/resources.js";
 
-
-export async function userConnected(serverData, socket) {
+export async function userConnected(serverData: ServerData, socket) {
 
 	const token = socket.handshake.auth.token;
 

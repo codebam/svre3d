@@ -8,8 +8,8 @@ import { Settings } from "../settings/settings.js";
 import { KeyMap } from "../settings/keymap.js";
 import { SceneManager } from "../common/sceneman.js";
 import { FirstPersonControls } from "../lib/FirstPersonControls.js";
-import UI from "../ui/uiman.js";
-import GlobalEmitter from "../misc/globalEmitter.js";
+import { UI } from "../ui/uiman.js";
+import { GlobalEmitter } from "../misc/globalEmitter.js";
 
 
 export class Controls {

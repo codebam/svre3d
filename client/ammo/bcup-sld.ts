@@ -1,14 +1,13 @@
-import { Project, Scene3D, PhysicsLoader, THREE, ExtendedObject3D, ThirdPersonControls, PointerLock, PointerDrag, JoyStick } from 'enable3d'
-import { preload } from './modules/preload'
-import { item } from './modules/models/item'
-import { CustomScene } from './modules/models/scene'
-import { Player } from './modules/player'
-
+import { Project, Scene3D, PhysicsLoader, THREE, ExtendedObject3D, ThirdPersonControls, PointerLock, PointerDrag, JoyStick } from 'enable3d';
+import { preload } from './modules/preload.js';
+import { item } from './modules/models/item.js';
+import { CustomScene } from './modules/models/scene.js';
+import { Player } from './modules/player.js';
 import { Keyboard } from "@yandeu/keyboard";
 
-const isTouchDevice = 'ontouchstart' in window;
+export const isTouchDevice = 'ontouchstart' in window;
 
-class MainScene extends CustomScene {
+export class MainScene extends CustomScene {
   loader!: Promise<any>
   player!: Player
   keys: Record<string, boolean> = {};

@@ -4,3 +4,4 @@
 /www/bundle.js
 index.js
 dist/
+.direnv/

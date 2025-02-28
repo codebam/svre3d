@@ -1,9 +1,12 @@
-#!/bin/node
-
+#!/usr/bin/env node
 import fs from 'fs';
 import path from 'path';
 import { spawn } from 'child_process';
 import { watch } from 'chokidar';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const res_path = path.resolve('./packages');
 const server_path = path.resolve('./server');
